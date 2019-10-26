@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.jms.core.JmsTemplate
-import javax.jms.Queue
+
 
 @Configuration
 class ActiveMqConfig {
@@ -15,7 +15,7 @@ class ActiveMqConfig {
     private lateinit var brokerUrl: String
 
     @Bean
-    fun getQueue(): Queue{
+    fun getQueue(): ActiveMQQueue {
         return ActiveMQQueue("standalone.queue")
     }
 
